@@ -1,0 +1,87 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+#sidebar {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background:#57626F ;
+    border-right: 4px solid #e0e5ea;
+    /*одновременно установить толщину, стиль и цвет правой границы элемента*/
+    left: -250px;
+    /*Чтобы изначально меню исчезло*/
+    -moz-animation: all 500ms;/*Для мозилы*/
+    -webkit-transform: all 500ms;/*для сафари*/
+    transition: all 500ms;/*Плавность перехода*/
+}
+
+#sidebar.active{
+    left: 0px;
+}
+    
+
+
+#sidebar ul li:first-child {
+    text-align: center;
+    /*Определяет горизонтальное выравнивание текста в пределах элемента*/
+    color: white;
+    font-size: 1.95em;
+    list-style: none;
+    padding: 25px 10px 10px 10px;
+    
+}
+
+#sidebar ul li:not(:first-child) {
+    width: 90%; 
+    /* Ширина*/
+    margin-left: 10%;
+    /*Устанавливает величину отступа от левого края элемента*/
+    font-size: 1.1em;
+    /* Определить размер шрифта*/
+    list-style: none;
+    /*нет маркера*/
+    padding: 15px 10px;
+    /*устанавливает внутренние отступы/поля со всех сторон элемента.*/
+    
+    
+}
+
+#sidebar ul li a {
+   color: #dfe5eb;
+   text-decoration: none;
+   /*Добавляет оформление текста в виде его подчёркивания, перечёркивания или линии над текстом.*/
+
+}
+#sidebar ul li a:hover {color : #59e9df}
+/*Голубое свечение при наведении*/
+
+#sidebar .toggle-btn {
+    position: absolute;
+    /*Элемент исчезает с того места, где он должен быть и позиционируется заново*/
+    left:  270px;
+    top: 20px;
+    background: #e0e5ea;
+    /*Цвет фона*/
+    padding: 10px;
+    border-radius:  12px;
+    /*свойство, позволяющее разработчикам определять, как скругляются границы блока. Закругленность каждого угла определяется с помощью одного или двух радиусов*/
+    cursor: pointer;
+    /*Устанавливает форму курсора, когда он находится в пределах элемента. Вид курсора зависит от операционной системы и установленных параметров.*/
+}
+
+#sidebar .toggle-btn:hover{background: #556270}/*Стиль при наведении(задний фон кнопки)*/
+#sidebar .toggle-btn:hover span{background: #fafafa}/*Стиль при наведении(цвет полосок меняется)*/
+
+#sidebar .toggle-btn span {
+    display: block;
+    width: 25px;
+    height: 4px;
+    background-color: #666;
+    margin: 4px; 
+    /*Чтобы полоски не прилегали друг к другу*/
+
+}
+/*Кнопка стала в 3 строчки*/
